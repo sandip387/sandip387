@@ -1,0 +1,17 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update GitHub Stats
+        run: |
+          curl -H "Authorization: token ${{ secrets.GH_README_STATS_TOKEN }}" \
+          "https://github-readme-stats.vercel.app/api/top-langs/?username=sandip387&count_private=true" \
+          -o top-langs.svg
