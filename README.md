@@ -57,8 +57,9 @@ Hi, I'm Sandip Shrestha 👋. I am a software developer from Nepal with a strong
     <td width="35%" valign="top">
       <h2 align="left">Most Used Languages</h2>
       <p align="right">
-  <!-- <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandip387&theme=dracula&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages"/> -->
-        ![Top Languages](top-langs.svg)
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandip387&theme=dracula&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages"/>
+    
+</p>
       </p>
     </td>
   </tr>
