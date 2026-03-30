@@ -1,4 +1,4 @@
-name: Update README
+name: Update Top Languages SVG
 
 on:
   schedule:
@@ -9,9 +9,19 @@ jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Update GitHub Stats
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Top Languages SVG
         run: |
           curl -H "Authorization: token ${{ secrets.GH_README_STATS_TOKEN }}" \
-          "https://github-readme-stats.vercel.app/api/top-langs/?username=sandip387&count_private=true" \
+          "https://github-readme-stats.vercel.app/api/top-langs/?username=sandip387&theme=dracula&hide_border=false&include_all_commits=true&count_private=true&layout=compact" \
           -o top-langs.svg
+
+      - name: Commit and push SVG
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add top-langs.svg
+          git commit -m "Update Top Languages SVG" || echo "No changes to commit"
+          git push
